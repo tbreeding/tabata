@@ -1,4 +1,4 @@
-service: ssr-react-next
+service: tabata-timer-com
 
 provider:
   name: aws
@@ -24,10 +24,10 @@ custom:
   apigwBinary:
     types:
       - '*/*'
-#   customDomain:
-#     domainName: ${self:custom.secrets.DOMAIN}
-#     basePath: ''
-#     stage: ${self:custom.secrets.NODE_ENV}
-#     createRoute53Record: true
+  customDomain:
+    domainName: ${self:custom.secrets.DOMAIN}
+    basePath: ''
+    stage: ${self:custom.secrets.NODE_ENV}
+    createRoute53Record: true
 # endpointType: 'regional'
 # if the ACM certificate is created in a region except for `'us-east-1'` you need `endpointType: 'regional'`

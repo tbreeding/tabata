@@ -12,7 +12,6 @@ const messageMap = {
 }
 
 const styles = theme => {
-	console.log('theme', theme)
 	return {
 		primaryContainer: {
 			padding: '16px',

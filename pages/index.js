@@ -2,6 +2,7 @@ import React from 'react'
 import Default from '../layouts/default'
 import { Divider, Grid } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
+import withRoot from '../withRoot'
 
 import PrimaryDisplay from '../components/PrimaryDisplay'
 import PrimaryButtons from '../components/PrimaryButtons'
@@ -44,7 +45,6 @@ class IndexPage extends React.Component {
 	}
 
 	getNextStep = () => {
-		console.log('getNextStep', this.state.currentStep)
 		switch (this.state.currentStep) {
 			case 'prep':
 				return 'work'
@@ -104,9 +104,7 @@ class IndexPage extends React.Component {
 
 	runTimer = () => {
 		if (this.interval) clearInterval(this.interval)
-		console.log('this.state.currentStep', this.state.currentStep)
 		if (this.state.currentStep === 'done') {
-			console.log('resetting!')
 			this.reset()
 		}
 		this.setState(
@@ -213,4 +211,4 @@ class IndexPage extends React.Component {
 	}
 }
 
-export default withStyles(styles)(IndexPage)
+export default withRoot(withStyles(styles)(IndexPage))
